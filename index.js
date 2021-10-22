@@ -4,7 +4,7 @@ require('dotenv').config();
 const { Octokit } = require("@octokit/rest");
 const { spawn } = require("child_process");
 
-const octokit = new Octokit({ auth: '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' });
+const octokit = new Octokit({ auth: process.env.GITHUB_PERSONAL_TOKEN });
 const getBranchPath = __dirname + "/get-branch.sh";
 const version = process.argv[2].trim();
 const releaseBranch = 'release/' + version;
@@ -12,8 +12,7 @@ const releaseBranch = 'release/' + version;
 let currentBranch;
 let remoteData;
 
-console.log(process.env.GITHUB_PERSONAL_TOKEN);
-// createRelease();
+createRelease();
 
 function createRelease() {
     getCurrentBranch();
