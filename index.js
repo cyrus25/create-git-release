@@ -1,5 +1,6 @@
 #! /usr/bin/env node
 
+require('dotenv').config();
 const { Octokit } = require("@octokit/rest");
 const { spawn } = require("child_process");
 
@@ -11,7 +12,8 @@ const releaseBranch = 'release/' + version;
 let currentBranch;
 let remoteData;
 
-createRelease();
+console.log(process.env.GITHUB_PERSONAL_TOKEN);
+// createRelease();
 
 function createRelease() {
     getCurrentBranch();
