@@ -1,0 +1,14 @@
+{
+  "name": "create-git-release",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:madhav23bansal/create-git-release.git",
+  "author": "madhav23bansal <madhavb230100@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@octokit/rest": "^18.12.0"
+  }
+}
