@@ -1,6 +1,6 @@
 {
   "name": "create-git-release",
-  "version": "2.0.0",
+  "version": "1.4.0",
   "main": "index.js",
   "repository": "git@github.com:madhav23bansal/create-git-release.git",
   "author": "madhav23bansal <madhavb230100@gmail.com>",
@@ -9,6 +9,7 @@
     "create-release": "node index.js"
   },
   "dependencies": {
-    "@octokit/rest": "^18.12.0"
+    "@octokit/rest": "^18.12.0",
+    "dotenv": "^10.0.0"
   }
 }
