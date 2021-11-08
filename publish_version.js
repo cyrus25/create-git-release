@@ -19,8 +19,12 @@ function publishVersion(tag) {
     let ls = null;
     if (project === "vscode")
         ls = spawn('npx', ['vsce', 'publish', packageJsonVersion]);
-    else
+    else if (project === "npm")
         ls = spawn('yarn', ['publish', '--tag=' + tag, '--new-version=' + packageJsonVersion]);
+    else {
+        console.log("Please pass npm or vscode as an addtional argument");
+        return;
+    }
 
     ls.stdout.on("data", function (data) {
         console.log(`${data}`);
